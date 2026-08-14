@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anil — Computer Engineer, Researcher, Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="#home" class="nav__logo">AN</a>
+  <div class="nav__links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav__right">
+    <a href="#resume" class="nav__resume magnetic">Resume ↗</a>
+    <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#work">Projects</a>
+  <a href="#research">Research</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+  <a href="#resume">Resume ↗</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="eyebrow">COMPUTER ENGINEERING — SYSTEMS · SECURITY · SIGNAL</div>
+  <h1 class="hero__name">Anil</h1>
+  <div class="hero__role">Engineer · Researcher · Builder</div>
+  <p class="hero__statement">I build systems that tell real signals from fabricated ones — reimplementing audio deepfake detectors from research papers, hardening programs against control-flow attacks, and taking compilers and caches apart to see how they actually think.</p>
+  <div class="hero__canvas-wrap"><canvas id="waveCanvas"></canvas></div>
+  <div class="hero__scroll"><span class="line"></span>SCROLL</div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>01 — ABOUT</div>
+    <div class="about__grid">
+      <div>
+        <h2 class="about__heading" data-reveal>Building systems. Understanding problems.</h2>
+        <div class="about__photo" data-reveal>Add a photograph here<br>(4:5, soft crop)</div>
+      </div>
+      <div class="about__narrative">
+        <p data-reveal>I'm a computer engineering student at <span class="ph" title="Replace with your IIT campus">[Indian Institute of Technology — campus]</span>, working across machine learning, computer architecture, and systems security — usually at the point where they overlap.</p>
+        <p data-reveal style="transition-delay:.08s">Most of my time lately goes into <strong>audio deepfake detection</strong>: reimplementing the SafeEar detection system from scratch in PyTorch, then rebuilding it again with PyTorch Lightning and Hydra to test architectural changes around its Bi-LSTM bottleneck. Alongside that, I've been comparing detection papers from ICASSP, EUSIPCO, and ICCIT to see what different approaches actually catch — and miss.</p>
+        <p data-reveal style="transition-delay:.16s">The rest of my coursework pulls in the same direction: building a shadow stack and control-flow-integrity checker with Intel PIN to catch ROP attacks, writing a compiler optimization visualizer for dead-code elimination and constant propagation, and building a cache simulator to make associativity and replacement policy tangible. Outside class, I spend time on CTF challenges and steganography — most problems, at some scale, come down to finding the signal that was deliberately hidden or faked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNICAL IDENTITY ============ -->
+<section class="section section--alt" id="skills">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>02 — TECHNICAL IDENTITY</div>
+    <h2 data-reveal style="font-size:clamp(2.1rem,4.4vw,3.6rem); margin-top:18px; max-width:600px;">The toolkit, by way of what it's for.</h2>
+    <div class="eco" data-reveal>
+      <div class="eco__nodes" id="ecoNodes">
+        <div class="eco__node" data-key="programming">Programming</div>
+        <div class="eco__node" data-key="systems">Systems</div>
+        <div class="eco__node" data-key="ai">AI &amp; ML</div>
+        <div class="eco__node" data-key="security">Cybersecurity</div>
+        <div class="eco__node" data-key="tools">Tools</div>
+      </div>
+      <div class="eco__desc" id="ecoDesc">Hover a category to see how it's actually used.</div>
+      <div class="eco__chips" id="ecoChips"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>03 — SELECTED WORK</div>
+    <h2 data-reveal style="font-size:clamp(2.1rem,4.4vw,3.6rem); margin-top:18px;">Systems I've built.</h2>
+    <div id="projectList" style="margin-top:44px;"></div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section class="section section--alt" id="research">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>04 — RESEARCH</div>
+    <h2 data-reveal style="font-size:clamp(2.1rem,4.4vw,3.6rem); margin-top:18px;">Reading, comparing, rebuilding.</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-item__date">Ongoing</div>
+        <div>
+          <div class="timeline-item__meta">Audio Deepfake Detection · Independent</div>
+          <div class="timeline-item__title">Audio Deepfake Paper Comparison</div>
+          <div class="timeline-item__body">
+            <p>A structured comparison of audio deepfake and voice-spoofing detection papers — including DeepSonar, ClearMask, and a study on cochlear-implant vulnerability — drawn from venues like ICASSP, EUSIPCO, and ICCIT.</p>
+            <p style="margin-top:10px;">Built and repeatedly refined as a working comparison document for faculty review, tightening structure and visual clarity across passes rather than as a one-off writeup.</p>
+            <p style="margin-top:10px;" class="ph" title="Add once findings are finalized">[Add key comparative findings once the workbook is finalized]</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal style="transition-delay:.1s">
+        <div class="timeline-item__date">Ongoing</div>
+        <div>
+          <div class="timeline-item__meta">Audio Deepfake Detection · SafeEar</div>
+          <div class="timeline-item__title">SafeEar Reimplementation</div>
+          <div class="timeline-item__body"><p>Full architectural rebuild and analysis of the SafeEar detector — see the complete case study under <a href="#work" style="color:var(--accent); border-bottom:1px solid var(--accent);">Selected Work ↗</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>05 — EXPERIENCE</div>
+    <h2 data-reveal style="font-size:clamp(2.1rem,4.4vw,3.6rem); margin-top:18px;">Where the time went.</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-reveal>
+        <div class="timeline-item__date ph" title="Add year">[Year]</div>
+        <div>
+          <div class="timeline-item__meta">Independent Research</div>
+          <div class="timeline-item__title">Audio Deepfake Detection — SafeEar</div>
+          <div class="timeline-item__body"><p>From-scratch reimplementation and a second architectural rebuild of the SafeEar speech deepfake detector, alongside a running comparison of detection papers across major audio-security venues.</p></div>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal style="transition-delay:.08s">
+        <div class="timeline-item__date ph" title="Add year">[Year]</div>
+        <div>
+          <div class="timeline-item__meta">Course Project · Computer Architecture</div>
+          <div class="timeline-item__title">Shadow Stack &amp; CFI Checker</div>
+          <div class="timeline-item__body"><p>Built a control-flow-integrity checker with Intel PIN, starting from zero prior familiarity with the tool, working toward ROP-chain detection and performance profiling.</p></div>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal style="transition-delay:.16s">
+        <div class="timeline-item__date ph" title="Add year">[Year]</div>
+        <div>
+          <div class="timeline-item__meta">Freelance / Part-time</div>
+          <div class="timeline-item__title">AI Response Evaluation — Deccan AI Experts</div>
+          <div class="timeline-item__body"><p>Rubric-based scoring and annotation of AI model responses.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section section--alt" id="education">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>06 — EDUCATION</div>
+    <div class="edu-card" data-reveal>
+      <div>
+        <div class="edu-card__name ph" title="Add your IIT campus">[Indian Institute of Technology — Campus]</div>
+        <div class="edu-card__branch"><span class="ph" title="Add branch">B.Tech — [Branch]</span> &nbsp;·&nbsp; <span class="ph" title="Add years">[20XX — 20XX]</span></div>
+        <div class="edu-card__areas">
+          <span>Computer Architecture</span><span>Artificial Intelligence</span><span>Cybersecurity</span><span>Operating Systems</span>
+        </div>
+      </div>
+      <div class="btn btn--ghost magnetic">Transcript ↗</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section class="section" id="achievements">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>07 — ACHIEVEMENTS</div>
+    <h2 data-reveal style="font-size:clamp(2.1rem,4.4vw,3.6rem); margin-top:18px;">Recognition &amp; credentials.</h2>
+    <div class="ach-grid" data-reveal>
+      <div class="ach-cell"><div class="ach-cell__label">Hackathon</div><div class="ach-cell__title ph" title="Add your own">[Add hackathon + result]</div></div>
+      <div class="ach-cell"><div class="ach-cell__label">Competitive Programming</div><div class="ach-cell__title ph" title="Add your own">[Add rating / rank]</div></div>
+      <div class="ach-cell"><div class="ach-cell__label">Certification</div><div class="ach-cell__title ph" title="Add your own">[Add certification]</div></div>
+      <div class="ach-cell"><div class="ach-cell__label">Award / Scholarship</div><div class="ach-cell__title ph" title="Add your own">[Add award]</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESUME CTA ============ -->
+<section class="section resume-cta" id="resume">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal style="justify-content:center;">08 — RESUME</div>
+    <h2 data-reveal>Want the complete story?</h2>
+    <div class="resume-cta__btns" data-reveal>
+      <a href="#" class="btn magnetic">View Resume ↗</a>
+      <a href="#" class="btn btn--ghost magnetic">Download PDF ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--dark contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal style="margin-bottom:26px;">09 — CONTACT</div>
+    <h2 data-reveal>Let's build something meaningful.</h2>
+    <div class="contact__grid" data-reveal>
+      <div class="contact__item"><div class="eyebrow">Email</div><a href="mailto:hello@example.com" class="ph" title="Add your email">hello@example.com</a></div>
+      <div class="contact__item"><div class="eyebrow">GitHub</div><a href="#" class="ph" title="Add your GitHub">github.com/anil ↗</a></div>
+      <div class="contact__item"><div class="eyebrow">LinkedIn</div><a href="#" class="ph" title="Add your LinkedIn">linkedin.com/in/anil ↗</a></div>
+      <div class="contact__item"><div class="eyebrow">X / Twitter</div><a href="#" class="ph" title="Add your X handle">@anil ↗</a></div>
+    </div>
+    <div class="footer">
+      <span>© 2026 Anil. Built from scratch.</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDY OVERLAY ============ -->
+<div class="overlay" id="overlay">
+  <div class="overlay__close" id="overlayClose">✕</div>
+  <div class="overlay__inner" id="overlayContent"></div>
+</div>
+
+<div class="view-cursor" id="viewCursor">VIEW<br>PROJECT</div>
+
+<script src="script.js"></script>
+</body>
+</html>
